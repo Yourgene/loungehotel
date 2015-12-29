@@ -14,11 +14,11 @@
 	}
 	//ajout d'un nouvel hebergement
 	else if ($_GET['section'] == 'hebergement'){
-		include('controleur/nouveau_hebergement/nouveau_hebergement.php');
+		include('controleur/hebergement/hebergement.php');
 	}
 	//ajout d'une reservation
 	else if ($_GET['section'] == 'reservation'){
-		include('controleur/nouvelle_reservation/nouvelle_reservation.php');
+		include('controleur/reservation/reservation.php');
 	}
 
 	//fin tamporisation
