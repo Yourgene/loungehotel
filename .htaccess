@@ -1,0 +1,33 @@
+﻿
+
+#URL Rewriting du site web
+#MIT Lienced owner Vladislav Sokolov
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+    RewriteRule    ^accueil/?$    index.php    [L]
+
+    RewriteRule    ^evenements/?$    index.php?section=evenements    [L]
+    RewriteRule    ^evenement/([0-9]+)/?$    index.php?section=evenements&evenement=$1    [L]
+    RewriteRule    ^evenement/([0-9]+)/?$    index.php?section=evenements&evenement=$1&action=participer    [L]
+
+    RewriteRule    ^connexion/?$    index.php?section=connexion    [L]
+    RewriteRule    ^connexion/off?$    index.php?section=connexion&action=deconnexion    [L]
+    RewriteRule    ^connexion/inscription/?$    index.php?section=connexion&action=inscription    [L]
+    RewriteRule    ^connexion/finalisation_inscritpion/?$    index.php?section=connexion&action=ajout_membre    [L]
+
+    RewriteRule    ^user/?$    index.php?section=user    [L]
+    RewriteRule    ^user/([0-9]+)/?$    index.php?section=user&user=$1    [L]
+
+    RewriteRule    ^galerie/?$    index.php?section=galerie    [L]
+
+    RewriteRule    ^news/([0-9]+)/?$    index.php?section=news&news=$1    [L]
+
+    RewriteRule    ^administration/?$    index.php?section=administration    [L]
+
+    RewriteRule    ^moderation/?$    index.php?section=moderation    [L]
+    RewriteRule    ^moderation/news?$    index.php?section=moderation&cible=news    [L]
+    RewriteRule    ^moderation/events?$    index.php?section=moderation&cible=events    [L]
+    RewriteRule    ^moderation/users?$    index.php?section=moderation&cible=users    [L]
+
+</IfModule>
