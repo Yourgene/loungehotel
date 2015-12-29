@@ -1,2 +1,2 @@
 <?php
-	include 'vue/index/index.php'
+	include 'vue/index/index.php';

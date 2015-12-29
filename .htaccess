@@ -6,9 +6,9 @@
     RewriteEngine On
     RewriteRule    ^accueil/?$    index.php    [L]
 
-    RewriteRule    ^reservation/?$    index.php?section=nouvelle_reservation    [L]
+    RewriteRule    ^reservation/?$    index.php?section=reservation    [L]
 
-    RewriteRule    ^hebergement/?$    index.php?section=nouveau_hebergement    [L]
+    RewriteRule    ^hebergement/?$    index.php?section=hebergement    [L]
     
 
 </IfModule>

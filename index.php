@@ -13,11 +13,11 @@
     	include('controleur/index/index.php');
 	}
 	//ajout d'un nouvel hebergement
-	else if ($_GET['section'] == 'nouveau_hebergement'){
+	else if ($_GET['section'] == 'hebergement'){
 		include('controleur/nouveau_hebergement/nouveau_hebergement.php');
 	}
 	//ajout d'une reservation
-	else if ($_GET['section'] == 'nouvelle_reservation'){
+	else if ($_GET['section'] == 'reservation'){
 		include('controleur/nouvelle_reservation/nouvelle_reservation.php');
 	}
 
