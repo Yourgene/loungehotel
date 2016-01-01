@@ -30,10 +30,13 @@
 			include 'modele/hebergement/traitements.php';
 			$services_selectionnes = get_services_selectionnes($liste_services,$_POST);
 			$places_hotel = get_nombre_places($_POST);
+			
 
+			
 
+			//ajout des données dans la bdd
 			include 'modele/hebergement/ajout_hebergement.php';
-			ajout_hebergement($services_selectionnes,$places_hotel,$_POST['nom'],$_POST['adresse'],$_POST['prix'],$_POST['categorie']);
+			ajout_hebergement($services_selectionnes,$places_hotel,$_POST['nom'],$_POST['adresse'],$_POST['prix'],$_POST['categorie'],$_POST['etoiles'],$_POST['resident']);
 		}
 
 	}

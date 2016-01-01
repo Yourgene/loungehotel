@@ -11,6 +11,15 @@
 	 	<label for="prix">Prix/nuit : </label>
 	 	<input type="text" name="prix"><br/>
 
+	 	<label for="etoiles">Nombre d'étoiles : </label>
+	 	<input type="text" name="etoiles"><br/>
+
+	 	<label for="resident">Destiné aux : </label>
+	   	<select name="resident" id="resident">
+	       <option value="arbitre">Arbitres</option>
+	       <option value="equipe">Equipe Sportive</option>
+	   	</select><br/>
+
 		<label for="categorie">Catégorie : </label>
 	   	<select name="categorie" id="categorie">
 	       <option value="Hotel">hotel</option>
