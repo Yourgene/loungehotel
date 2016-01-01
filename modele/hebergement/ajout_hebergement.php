@@ -1,13 +1,29 @@
 <?php
 
-	//ajoute un hebergement a la bdd
-	function ajout_hebergement($services_selectionnes,$places_hotel,$nom,$adresse,$prix,$categorie,$etoiles,$resident){
+	//ajoute un hebergement a la bdd ainsi que son rpoprietaire
+	function ajout_hebergement($services_selectionnes,$places_hotel,$nom,$adresse,$prix,$categorie,$etoiles,$resident,$nom_proprietaire,$prenom_proprietaire,$email_proprietaire){
+
+
+		//creation du compte du proprietaire
+		$taille_mdp = 10;
+		$mdp_proprietaire_non_hashe = openssl_random_pseudo_bytes($taille_mdp);
+		$mdp_proprietaire = password_hash($mdp_proprietaire_non_hashe,PASSWORD_BCRYPT);
 		
-		//ajout des differentes caracteristiques dans la table hebergement
-		$valeurs = array($nom,$categorie,$adresse,$prix,$etoiles,$resident,$places_hotel['lit_1'],$places_hotel['lit_2'], $places_hotel['lit_3'], $places_hotel['lit_4'], $places_hotel['lit_5'], $places_hotel['lit_6'], $places_hotel['lit_7'], $places_hotel['lit_8'], $places_hotel['lit_9'], $places_hotel['lit_10']);
-		$colonnes = array('nom_hebergement','categorie_hebergement','adresse_hebergement','prix_hebergement','etoiles_hebergement','resident_hebergement','lit_1', 'lit_2', 'lit_3', 'lit_4', 'lit_5', 'lit_6', 'lit_7', 'lit_8', 'lit_9', 'lit_10');
+		$valeurs = array($nom_proprietaire,$prenom_proprietaire,$email_proprietaire,$mdp_proprietaire);
+		$colonnes = array('nom_proprietaire','prenom_proprietaire','email_proprietaire','mdp_proprietaire');
 
 		$pdo = PdoSio::getPdoSio();
+		$req = $pdo->InsertRequest('proprietaire',$colonnes,$valeurs);
+		$req = $pdo->selectRequest('SELECT id_proprietaire FROM proprietaire WHERE email_proprietaire = "' . $email_proprietaire . '"');
+		$id_proprietaire = $req[0]['id_proprietaire'];
+
+
+		
+		//ajout des differentes caracteristiques dans la table hebergement
+		$valeurs = array($id_proprietaire,$nom,$categorie,$adresse,$prix,$etoiles,$resident,$places_hotel['lit_1'],$places_hotel['lit_2'], $places_hotel['lit_3'], $places_hotel['lit_4'], $places_hotel['lit_5'], $places_hotel['lit_6'], $places_hotel['lit_7'], $places_hotel['lit_8'], $places_hotel['lit_9'], $places_hotel['lit_10']);
+		$colonnes = array('id_proprietaire','nom_hebergement','categorie_hebergement','adresse_hebergement','prix_hebergement','etoiles_hebergement','resident_hebergement','lit_1', 'lit_2', 'lit_3', 'lit_4', 'lit_5', 'lit_6', 'lit_7', 'lit_8', 'lit_9', 'lit_10');
+
+		
 		$req = $pdo->InsertRequest('hebergement',$colonnes,$valeurs);
 
 
@@ -27,6 +43,6 @@
 				
 				$req = $pdo->InsertRequest('possede_service',$colonnes,$valeurs);
 
-			}
+		}
 
 	}

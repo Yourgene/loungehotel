@@ -1,7 +1,23 @@
 <div>
-	Ajout d'un nouvel établissement
+
+
+
+	<h1>Ajout d'un nouvel établissement</h1>
 	<form method="post" action="hebergement">
 
+		<h2>Creation du proprietaire :</h2>
+
+		<label for="nom_proprietaire">Nom Proprietaire : </label>
+	 	<input type="text" name="nom_proprietaire"><br/>
+
+	 	<label for="prenom_proprietaire">Prenom Proprietaire : </label>
+	 	<input type="text" name="prenom_proprietaire"><br/>
+
+	 	<label for="email_proprietaire">Mail Proprietaire : </label>
+	 	<input type="text" name="email_proprietaire"><br/><br/>
+
+
+	 	<h2>Creation de l'hebergement :</h2>
 	 	<label for="nom">Nom : </label>
 	 	<input type="text" name="nom"><br/>
 	 	
@@ -58,7 +74,7 @@
 	<form method="post" action="hebergement">
 	 	<input type="HIDDEN" name="action" value="participer_evenement"><br/>
 
-	 	Ajouter un service inexistant : <br/>
+	 	<h2>Ajouter un service inexistant : </h2>
 
 	 	<label for="nom_service">Nom : </label>
 	 	<input type="text" name="nom_service"><br/>
