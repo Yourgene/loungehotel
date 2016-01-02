@@ -42,6 +42,9 @@
 		   <option value="Auberge de jeunesse">Auberge de jeunesse</option>
 		</select><br/><br/>
 
+		<label for="numero_telephone">Numéro Telephone : </label>
+		<input type="text" name="numero_telephone"><br/>
+
 
 		Nombre de places : <br/>
 		<?php 
