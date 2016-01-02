@@ -10,8 +10,8 @@
 <!--Bandeau de navigation -->
 	<div>
 		<ul>
-			<li><a href="#">Nouvel Hebergement</a></li>
-			<li><a href="#">Nouvele Réservation</a></li>
+			<li><a href="hebergement">Nouvel Hebergement</a></li>
+			<li><a href="reservation">Nouvele Réservation</a></li>
 		</ul>
 	</div>
 </header>
