@@ -7,7 +7,7 @@
     RewriteRule    ^accueil/?$    index.php    [L]
 
     RewriteRule    ^reservation/?$    index.php?section=reservation    [L]
-    RewriteRule    ^reservation/?$    index.php?section=reservation&action=visualiser    [L]
+    RewriteRule    ^reservation/visualiser?$    index.php?section=reservation&action=visualiser    [L]
 
     RewriteRule    ^hebergement/?$    index.php?section=hebergement    [L]
     

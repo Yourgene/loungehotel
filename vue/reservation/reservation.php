@@ -1,7 +1,7 @@
 <div>
 
 	<h1>Effectuer une réservation </h1>
-	<form method="post" action="hebergement/visualiser">
+	<form method="post" action="reservation/visualiser">
 
 		<h2>Saisissez vos préférences :</h2>
 

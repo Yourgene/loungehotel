@@ -15,16 +15,8 @@
 		if (!isset($data['chambre_commune']) ){
 			$requete .= 'AND lit_1 > ' . intval($data['nb_places']) . ' ';
 		} else {
-			
+			$requete .= 'AND lit_' . $data['nb_places'] . ' > 0 ';
 		}
-
-
-
-
-
-
-
-
 
 		$pdo = PdoSio::getPdoSio();
 		$req = $pdo->selectRequest($requete);
