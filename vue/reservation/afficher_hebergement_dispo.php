@@ -20,16 +20,16 @@
 			<th>Services proposés</th>
 			<th>TELEPHONE</th>
 		</tr>
-	<?php foreach ($liste_hebergements as $hebergement) { ?>
+	<?php foreach ($liste_hebergements as $key => $value) { ?>
 		<tr>
-			<td><?php echo $hebergement['nom_hebergement'] ?></td>
-			<td><?php echo $hebergement['categorie_hebergement'] ?></td>
-			<td><?php echo $hebergement['resident_hebergement'] ?></td>
-			<td><?php echo $hebergement['adresse_hebergement'] ?></td>
-			<td><?php echo $hebergement['prix_hebergement'] ?></td>
-			<td><?php echo $hebergement['etoiles_hebergement'] ?></td>
-			<td>A FAIRE</th>
-			<td><?php echo $hebergement['telephone_hebergement'] ?></td>
+			<td><?php echo $value['nom_hebergement'] ?></td>
+			<td><?php echo $value['categorie_hebergement'] ?></td>
+			<td><?php echo $value['resident_hebergement'] ?></td>
+			<td><?php echo $value['adresse_hebergement'] ?></td>
+			<td><?php echo $value['prix_hebergement'] ?></td>
+			<td><?php echo $value['etoiles_hebergement'] ?></td>
+			<td><?php echo $liste_services[$key] ?></th>
+			<td><?php echo $value['telephone_hebergement'] ?></td>
 		</tr>
 	<?php } ?>
 	</table>

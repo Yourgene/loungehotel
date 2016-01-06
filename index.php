@@ -20,6 +20,10 @@
 	else if ($_GET['section'] == 'reservation'){
 		include('controleur/reservation/reservation.php');
 	}
+	//permet aux organisateurs et proprietaires d'hotel de se loguer
+	else if ($_GET['section'] == 'connexion'){
+		include('controleur/connexion/connexion.php');
+	}
 
 	//fin tamporisation
 	$contenu = ob_get_clean();
@@ -30,4 +34,3 @@
 	echo $contenu;
 
 	// Fin du code HTML
-	include 'vue/footer.php';

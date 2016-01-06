@@ -12,6 +12,7 @@
 		<ul>
 			<li><a href="hebergement">Nouvel Hebergement</a></li>
 			<li><a href="reservation">Nouvele Réservation</a></li>
+			<li><a href="connexion">Connexion</a></li>
 		</ul>
 	</div>
 </header>

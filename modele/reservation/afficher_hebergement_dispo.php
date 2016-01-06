@@ -2,6 +2,8 @@
 	
 	function afficher_hebergement_dispo($data){
 
+		$reponse = array();
+
 		//on construit la requete au fur et à mesure
 		$requete = '';
 		$requete .= 'SELECT * FROM hebergement WHERE resident_hebergement="' . $data['client'] . '" ';
@@ -20,7 +22,18 @@
 
 		$pdo = PdoSio::getPdoSio();
 		$req = $pdo->selectRequest($requete);
-		return ($req);
+
+		//On va maintenant récupérer les services associées à chaque etablissement
+		$liste_services = array();
+
+		foreach ($req as $key => $value) {
+			$services = Hebergement::getServices($value['id_hebergement']);
+			$liste_services[$key] = $services;
+		}
+
+		$reponse[0] = $req;
+		$reponse[1] = $liste_services;
+		return ($reponse);
 
 
 	}
