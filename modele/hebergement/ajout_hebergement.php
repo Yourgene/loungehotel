@@ -5,9 +5,8 @@
 
 
 		//creation du compte du proprietaire
-		$taille_mdp = 10;
-		$mdp_proprietaire_non_hashe = openssl_random_pseudo_bytes($taille_mdp);
-		$mdp_proprietaire = password_hash($mdp_proprietaire_non_hashe,PASSWORD_BCRYPT);
+		$mdp_nohash = random_password(10);
+		$mdp_proprietaire = md5($mdp_nohash);
 		
 		$valeurs = array($nom_proprietaire,$prenom_proprietaire,$email_proprietaire,$mdp_proprietaire);
 		$colonnes = array('nom_proprietaire','prenom_proprietaire','email_proprietaire','mdp_proprietaire');

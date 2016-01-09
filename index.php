@@ -1,6 +1,9 @@
 <?php
-	
-	//App::getSession();
+
+
+	//gestion de session
+	include 'lib/app.php';
+	App::getSession();
 
 	// Début de la tamporisation de sortie
 	ob_start();

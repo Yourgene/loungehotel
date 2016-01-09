@@ -31,10 +31,13 @@
 	public static function connexion($username,$password) {
 
 		$pdo = PdoSio::getPdoSio();
-		$req = $pdo->selectRequest('SELECT id_proprietaire FROM proprietaire WHERE email_proprietaire = "' . $username . '" and mot_de_passe = "' . password_hash($password,PASSWORD_BCRYPT); . '"');
+		$requete = 'SELECT id_proprietaire FROM proprietaire WHERE email_proprietaire = "' . $username . '" and mdp_proprietaire = "' . md5($password) . '"';
+
+		$req = $pdo->selectRequest($requete);
+		print_r($req);
 
 		if($req){
-			return $req[0]['id'];
+			return $req[0]['id_proprietaire'];
 		} else{
 			return 'false';
 		}

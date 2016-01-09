@@ -5,13 +5,15 @@
 
 		$connexion = User::connexion($pseudo,$mdp);
 
-		if ($connexion == 'false'){
+		if ($connexion !== 'false'){
 
-			header('Location: accueil');      
-  			exit();   
+			$_SESSION['id'] = $connexion;
+
+			header('Location: /loungehotel/accueil ');
+			exit();	   
 		}
 		else{
-			header('Location: connexion');      
+			header('Location: /loungehotel/connexion ');      
   			exit();   
 		}
 	}
