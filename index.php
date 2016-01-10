@@ -5,6 +5,11 @@
 	include 'lib/app.php';
 	App::getSession();
 
+	//test a enlever
+	if (isset($_SESSION['id'])){
+		echo $_SESSION['id'];
+	}
+
 	// Début de la tamporisation de sortie
 	ob_start();
 
@@ -19,10 +24,15 @@
 	else if ($_GET['section'] == 'hebergement'){
 		include('controleur/hebergement/hebergement.php');
 	}
-	//ajout d'une reservation
+	//ajout d'une reservation cote client
 	else if ($_GET['section'] == 'reservation'){
 		include('controleur/reservation/reservation.php');
 	}
+
+	else if ($_GET['section'] == 'ajout_reservation'){
+		include('controleur/ajout_reservation/ajout_reservation.php');
+	}
+	
 	//permet aux organisateurs et proprietaires d'hotel de se loguer
 	else if ($_GET['section'] == 'connexion'){
 		include('controleur/connexion/connexion.php');
@@ -35,5 +45,7 @@
 	include 'vue/metaheader.php';
 
 	echo $contenu;
+
+	include 'vue/footer.php';
 
 	// Fin du code HTML

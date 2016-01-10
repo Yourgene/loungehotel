@@ -10,9 +10,25 @@
 <!--Bandeau de navigation -->
 	<div>
 		<ul>
+
+			<?php if (isset($_SESSION['id']) && $_SESSION['id'] == '1'){ ?>
 			<li><a href="hebergement">Nouvel Hebergement</a></li>
-			<li><a href="reservation">Nouvele Réservation</a></li>
-			<li><a href="connexion">Connexion</a></li>
+			<?php } ?>
+
+			<?php if (isset($_SESSION['id']) /*&& $_SESSION['id'] != '1'*/){ ?>
+			<li><a href="ajout_reservation">Nouvelle réservation</a></li>
+			<?php } else {?>
+			<li><a href="reservation">Effectuez une réservation</a></li>
+			<?php } ?>
+			
+
+
+			<?php if (!isset($_SESSION['id'])){ ?>
+			<li><a href="connexion">Espace Organisateurs</a></li>
+			<?php } else { ?>
+			<li><a href="connexion/off">Deconnexion</a></li>
+			<?php } ?>
+			
 		</ul>
 	</div>
 </header>

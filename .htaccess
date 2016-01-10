@@ -9,10 +9,12 @@
     RewriteRule    ^reservation/?$    index.php?section=reservation    [L]
     RewriteRule    ^reservation/visualiser?$    index.php?section=reservation&action=visualiser    [L]
 
+    RewriteRule    ^ajout_reservation/?$    index.php?section=ajout_reservation   [L]
+
     RewriteRule    ^hebergement/?$    index.php?section=hebergement    [L]
 
     RewriteRule    ^connexion/?$    index.php?section=connexion    [L]
-    RewriteRule    ^connexion/login?$    index.php?section=connexion&action=login    [L]
+   	RewriteRule    ^connexion/off?$    index.php?section=connexion&action=off   [L]
     
 
 </IfModule>

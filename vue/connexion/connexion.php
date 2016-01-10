@@ -2,7 +2,7 @@
 	<i> 9rwhVumJl8  - eustache.lamoustachette@laposte.net</i>
 
 	<h1>Connexion </h1>
-	<form method="post" action="connexion/login">
+	<form method="post" action="connexion">
 
 
 		<input type="hidden" name="action" value="login"><br/>
