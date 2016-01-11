@@ -16,7 +16,6 @@
 
 		//recupere les services de l'hebergement
 		$liste_services = Hebergement::getServicesTab(Hebergement::getId($_SESSION['id']));
-		print_r($liste_services);
 
 		include 'vue/ajout_reservation/vue2.php';
 	}
@@ -29,7 +28,7 @@
 
 		//preparation a l'affichage du dernier formulaire
 		include 'modele/ajout_reservation/preparation_formulaire.php';
-		preparation_formulaire($_SESSION['nb_places'],$_SESSION['chambre_commune'],$_SESSION['id']);
+		preparation_formulaire($_SESSION['nb_places'],$_SESSION['chambre_commune'],$_SESSION['id'],$_POST);
 
 		include 'vue/ajout_reservation/vue3.php';
 

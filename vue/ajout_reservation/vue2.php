@@ -1,5 +1,26 @@
 <div>
 
+	<script>
+  $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#to" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
+  });
+  </script>
+
 	<h1>Ajout Réservation - Etape 2 </h1>
 
 	<form method="post" action="ajout_reservation">
@@ -33,7 +54,12 @@
 		(<?php echo($service['prix_service']); ?> €)<br/>
 		<?php } ?>
 
+		<h2> Durée du séjour </h2>
+		<label for="from">Du</label>
+		<input type="text" id="from" name="from">
 
+		<label for="to">au</label>
+		<input type="text" id="to" name="to">
 		<br/>
 		<input type="submit" value="Suivant" />
 	
