@@ -40,5 +40,6 @@
 	}
 
 
+
 	//affichage de la vue (formulaires)
 	include 'vue/hebergement/hebergement.php';
