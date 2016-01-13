@@ -38,6 +38,11 @@
 		include('controleur/connexion/connexion.php');
 	}
 
+	//visualisation de
+	else if ($_GET['section'] == 'affichage_reservation'){
+		include('controleur/affichage_reservation/affichage_reservation.php');
+	}
+
 	//fin tamporisation
 	$contenu = ob_get_clean();
 
