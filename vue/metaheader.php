@@ -34,6 +34,17 @@
     </div>
 </nav>
 
+ <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="active"> <a href="#">Accueil</a> </li>
+            <li> <a href="#">Nouvelle Réservation</a> </li>
+            <li> <a href="#">Nouvel Hébergement</a> </li>
+            <li> <a href="#">Connexion</a> </li>
+          </ul>
+        </div>
+      </nav>
+
 
 </header>
 
