@@ -11,8 +11,9 @@
         <link href="../css/bootstrap/dist/css/csstest.css" rel="stylesheet">
         <link href="../css/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	</head>
-<header>
+
 <!--Bandeau de navigation -->
+<div class="row">
  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
@@ -33,7 +34,8 @@
         </ul>
     </div>
 </nav>
-
+</div>
+<div class="row">
  <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
@@ -45,7 +47,7 @@
         </div>
       </nav>
 
+</div>
 
-</header>
 
 <body>
