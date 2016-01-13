@@ -25,10 +25,11 @@
 
 		include 'modele/ajout_reservation/get_loges.php';
 		$liste_loges = get_loges($_POST,$_SESSION['nb_places']);
+		
 
 		//preparation a l'affichage du dernier formulaire
 		include 'modele/ajout_reservation/preparation_formulaire.php';
-		preparation_formulaire($_SESSION['nb_places'],$_SESSION['chambre_commune'],$_SESSION['id'],$_POST);
+		$donnees = preparation_formulaire($_SESSION['nb_places'],$_SESSION['chambre_commune'],$_SESSION['id'],$_POST);
 
 		include 'vue/ajout_reservation/vue3.php';
 

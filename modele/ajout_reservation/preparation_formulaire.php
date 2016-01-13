@@ -16,7 +16,7 @@
 
 		$date_debut_bd = new DateTime($data['from']);
 		$date_fin_bd = new DateTime($data['to']);
-		print_r($date_fin_bd);
+		
 
 		$date_debut_formatee = mktime(0, 0, 0, intval($date_debut[0]), intval($date_debut[1]), intval($date_debut[2]));
 		$date_fin_formatee = mktime(0, 0, 0, intval($date_fin[0]), intval($date_fin[1]), intval($date_fin[2]));
@@ -39,14 +39,13 @@
 
 		//recuperation des chambres correspondantes + calcul du prix
 		if ($chambre_commune == NULL){
-			$chambres = array('lit_1' => $infos_hebergement['lit_1']);
+			$chambres = array(1,$infos_hebergement['lit_1']);
 			$prix = $infos_hebergement['prix_hebergement']*$nb_places*$duree;
 		}
 		else {
-			$chambres = array('lit_' . $nb_places => $infos_hebergement['lit_' . $nb_places]);
+			$chambres = array($nb_places,$infos_hebergement['lit_' . $nb_places]);
 			$prix = $infos_hebergement['prix_hebergement']*$duree;
 		}
-
 
 		
 		//Recuperation des services selectionnes et MaJ du prix
@@ -61,8 +60,11 @@
 			}
 		}
 
-		echo $prix;
 
+		//variable contenant toutes les données
+		$donnees = array($infos_hebergement,$data['from'],$data['to'],$duree,$chambres,$prix,$services_selectionnes);
 
+		print_r($donnees);
+		return $donnees;
 
 	}
