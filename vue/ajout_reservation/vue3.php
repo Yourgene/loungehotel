@@ -33,22 +33,22 @@
 		<h3>Logé n°<?php echo $i ?> :</h3>
 		<p>	
 			Nom : <?php echo $liste_loges[$i][0] ?> </br>
-			<input type="hidden" name="nom_<?php echo $i ?>" value="<?php echo $liste_loges[$i][0] ?>">
+			<input type="hidden" required="required" name="nom_<?php echo $i ?>" value="<?php echo $liste_loges[$i][0] ?>">
 
 			Prenom : <?php echo $liste_loges[$i][1] ?></br>
-			<input type="hidden" name="prenom_<?php echo $i ?>" value="<?php echo $liste_loges[$i][1] ?>">
+			<input type="hidden" required="required" name="prenom_<?php echo $i ?>" value="<?php echo $liste_loges[$i][1] ?>">
 
 			E-mail : <?php echo $liste_loges[$i][2] ?></br>
-			<input type="hidden" name="mail_<?php echo $i ?>" value="<?php echo $liste_loges[$i][2] ?>">
+			<input type="hidden" required="required" name="mail_<?php echo $i ?>" value="<?php echo $liste_loges[$i][2] ?>">
 			<?php if($_SESSION['chambre_commune'] == NULL) { ?>
 			<label for="numero_chambre_<?php echo $i ?>">Numéro chambre attribué : </label>
-			<input type="text" name="numero_chambre_<?php echo $i ?>"><br/>
+			<input type="text" required="required" name="numero_chambre_<?php echo $i ?>"><br/>
 			<?php } ?>
 		</p>
 
 		<?php } if($_SESSION['chambre_commune'] != NULL) { ?>
 			<label for="numero_chambre_<?php echo $i ?>">Numéro chambre attribué : </label>
-			<input type="text" name="numero_chambre_0"><br/>
+			<input type="text" required="required" name="numero_chambre_0"><br/>
 			<?php } ?>
 
 

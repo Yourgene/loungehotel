@@ -8,27 +8,27 @@
 		<h2>Creation du proprietaire :</h2>
 
 		<label for="nom_proprietaire">Nom Proprietaire : </label>
-		<input type="text" name="nom_proprietaire"><br/>
+		<input type="text" required="required" name="nom_proprietaire"><br/>
 
 		<label for="prenom_proprietaire">Prenom Proprietaire : </label>
-		<input type="text" name="prenom_proprietaire"><br/>
+		<input type="text" required="required" name="prenom_proprietaire"><br/>
 
 		<label for="email_proprietaire">Mail Proprietaire : </label>
-		<input type="text" name="email_proprietaire"><br/><br/>
+		<input type="text" required="required" name="email_proprietaire"><br/><br/>
 
 
 		<h2>Creation de l'hebergement :</h2>
 		<label for="nom">Nom : </label>
-		<input type="text" name="nom"><br/>
+		<input type="text" required="required" name="nom"><br/>
 		
 		<label for="adresse">Adresse : </label>
-		<input type="text" name="adresse"><br/>
+		<input type="text" required="required" name="adresse"><br/>
 
 		<label for="prix">Prix/nuit : </label>
-		<input type="text" name="prix"><br/>
+		<input type="text" required="required" name="prix"><br/>
 
 		<label for="etoiles">Nombre d'étoiles : </label>
-		<input type="text" name="etoiles"><br/>
+		<input type="text" required="required" name="etoiles"><br/>
 
 		<label for="resident">Destiné aux : </label>
 		<select name="resident" id="resident">
@@ -43,7 +43,7 @@
 		</select><br/><br/>
 
 		<label for="numero_telephone">Numéro Telephone : </label>
-		<input type="text" name="numero_telephone"><br/>
+		<input type="text" required="required" name="numero_telephone"><br/>
 
 
 		Nombre de places : <br/>
@@ -80,7 +80,7 @@
 		<h2>Ajouter un service inexistant : </h2>
 
 		<label for="nom_service">Nom : </label>
-		<input type="text" name="nom_service"><br/>
+		<input type="text" required="required" name="nom_service"><br/>
 
 		
 		<input type="submit" value="Creer ce service" />
