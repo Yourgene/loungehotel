@@ -25,12 +25,22 @@
 
 		include 'modele/ajout_reservation/get_loges.php';
 		$liste_loges = get_loges($_POST,$_SESSION['nb_places']);
+		
 
 		//preparation a l'affichage du dernier formulaire
 		include 'modele/ajout_reservation/preparation_formulaire.php';
-		preparation_formulaire($_SESSION['nb_places'],$_SESSION['chambre_commune'],$_SESSION['id'],$_POST);
+		$donnees = preparation_formulaire($_SESSION['nb_places'],$_SESSION['chambre_commune'],$_SESSION['id'],$_POST);
+		$_SESSION['donnees'] = $donnees;
 
 		include 'vue/ajout_reservation/vue3.php';
+	}
+
+	//permet de passer a l'etape 4
+	else if (isset($_POST['action']) && $_POST['action'] == 'vue3'){
+
+		include 'modele/ajout_reservation/creation_reservation.php';
+
+		creation_reservation($_POST,$_SESSION['donnees'],$_SESSION['nb_places'],$_SESSION['chambre_commune']);
 
 	}
 

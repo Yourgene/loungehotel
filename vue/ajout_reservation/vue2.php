@@ -31,13 +31,13 @@
 
 			<h2>Logé n°<?php echo $i; ?> </h2>
 			<label for="nom_<?php echo $i; ?>">Nom : </label>
-			<input type="text" name="nom_<?php echo $i; ?>"><br/>
+			<input type="text" required="required" name="nom_<?php echo $i; ?>"><br/>
 
 			<label for="prenom_<?php echo $i; ?>">Prenom : </label>
-			<input type="text" name="prenom_<?php echo $i; ?>"><br/>
+			<input type="text" required="required" name="prenom_<?php echo $i; ?>"><br/>
 
 			<label for="email_<?php echo $i; ?>">Email : </label>
-			<input type="text" name="email_<?php echo $i; ?>"><br/>
+			<input type="text" required="required" name="email_<?php echo $i; ?>"><br/>
 
 
 		<?php } ?>
@@ -56,10 +56,10 @@
 
 		<h2> Durée du séjour </h2>
 		<label for="from">Du</label>
-		<input type="text" id="from" name="from">
+		<input type="text" required="required" id="from" name="from">
 
 		<label for="to">au</label>
-		<input type="text" id="to" name="to">
+		<input type="text" required="required" id="to" name="to">
 		<br/>
 		<input type="submit" value="Suivant" />
 	
