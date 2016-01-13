@@ -18,8 +18,11 @@
 		}
 
 		else {
-			foreach ($liste_chambres[0]) {
-				# code...
+			for($i=1;$i<=$nb_places;$i++){
+
+				$valeurs = array($id_reservation, $liste_chambres['numero_chambre_' . $i],$liste_chambres['nom_' . $i],$liste_chambres['prenom_' . $i],$liste_chambres['mail_' . $i]);
+				$colonnes = array('id_reservation','id_chambre','nom_loge','prenom_loge','email_loge');
+				$req = $pdo->InsertRequest('reservation_chambre',$colonnes,$valeurs);
 			}
 		}
 		
