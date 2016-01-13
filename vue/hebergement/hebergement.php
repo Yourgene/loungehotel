@@ -147,6 +147,34 @@
 	 		</fieldset>
 	    </form>
  </div>
+</section>
+<section class="row">
+<div class="col-lg-offset-2 col-lg-4">
+	 <form class="form-horizontal">
+	 	 <fieldset>
+			<div class="form-group">
+			        <label class="col-md-4 control-label" for="checkboxes">Services proposés :</label>
+			        <div class="col-md-4">
+				        <div class="checkbox">
+				        	<?php 
+								foreach($liste_services as $service)
+								{
+								?>
+								<label for="checkboxes-0">
+									<input type="checkbox" name="<?php echo($service['nom_service']); ?>" value="<?php echo($service['nom_service']); ?>"> <?php echo($service['description_service']); ?><br/>
+									- prix : <input type="text" value ="0" name="<?php echo($service['nom_service']); ?>_prix">
+									<?php } ?>
+								</label>
+				          <label for="checkboxes-0">
+				            <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+				            Eau
+				          </label>
+				        </div>
+			        </div>
+			      </div>
+			</fieldset>
+	    </form>
+ </div>
 
 		<!--Services proposés : <br/>
 		 affichage de tous les services disponibles grace a une requete sql 
@@ -175,7 +203,7 @@
 		<input type="text" name="nom_service"><br/>
 		<input type="submit" value="Creer ce service" />-->
 
-	</form>
+	
 </section>
 <section class="row">
 	<div class="col-lg-offset-4 col-lg-3">
