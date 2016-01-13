@@ -127,8 +127,8 @@
         </div>
       </div>	
 
-		
-
+</section>	
+<section class="row">
 <div class="col-lg-offset-2 col-lg-8">
 	 <form class="form-horizontal">
 	 	 <fieldset>
@@ -138,8 +138,8 @@
 			<?php 
 			for($i=1; $i<11;$i++){ ?>
 
-				<label class="col-md-4 control-label" for="lit_<?php echo ($i) ?>">Chambres à <?php echo ($i) ?> lit : </label>
-				<div class="col-md-4">
+				<label class="col-md-5 control-label" for="lit_<?php echo ($i) ?>">Chambres à <?php echo ($i) ?> lit : </label>
+				<div class="col-md-5">
 				<input type="text" value ="0" name="lit_<?php echo ($i) ?>" placeholder="nombre de lits" class="form-control input-md">
 				</div>	
 			<?php } ?>
@@ -147,10 +147,9 @@
 	 		</fieldset>
 	    </form>
  </div>
-	
 
-		Services proposés : <br/>
-		<!-- affichage de tous les services disponibles grace a une requete sql 
+		<!--Services proposés : <br/>
+		 affichage de tous les services disponibles grace a une requete sql 
 		<?php 
 		foreach($liste_services as $service)
 		{
@@ -177,6 +176,8 @@
 		<input type="submit" value="Creer ce service" />-->
 
 	</form>
+</section>
+<section class="row">
 	<div class="col-lg-offset-4 col-lg-3">
 	    <form class="form-horizontal">
 	      <fieldset>
