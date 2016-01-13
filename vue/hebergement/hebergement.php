@@ -2,59 +2,147 @@
 
 
 
-	<h1>Ajout d'un nouvel établissement</h1>
-	<form method="post" action="hebergement">
+	
+<section class="row">
+  <div class="col-lg-offset-1 col-lg-12">
+        <h1>Ajout d'un nouvel établissement</h1>
+          <form class="form-horizontal" action="hebergement">
+            <fieldset>
 
-		<h2>Creation du proprietaire :</h2>
+    <!-- Form Name -->
+              <legend>Creation du proprietaire : </legend>
 
-		<label for="nom_proprietaire">Nom Proprietaire : </label>
-		<input type="text" name="nom_proprietaire"><br/>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="nom_proprietaire">Nom Proprietaire :</label>  
+                <div class="col-md-4">
+                <input id="nom_proprietaire" name="nom_proprietaire" type="text" class="form-control input-md">
+                  
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="prenom_proprietaire">Prénom proprietaire :</label>  
+                <div class="col-md-4">
+                <input id="prenom_proprietaire" name="prenom_proprietaire" type="text"  class="form-control input-md">
+                  
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="email_proprietaire">Mail proprietaire : </label>  
+                <div class="col-md-4">
+                <input id="email_proprietaire" name="email_proprietaire" type="text" placeholder="VladLeBeauGossDu69@hotmail.fr" class="form-control input-md">
+                  
+                </div>
+              </div>
+               </fieldset>
+      </form>
+</section>
+<section class="row">
+  <div class="col-lg-offset-1 col-sm-5">
+    <form class="form-horizontal">
+    <fieldset>
 
-		<label for="prenom_proprietaire">Prenom Proprietaire : </label>
-		<input type="text" name="prenom_proprietaire"><br/>
+    <!-- Form Name -->
+      <legend>Creation de l'hebergement : </legend>
 
-		<label for="email_proprietaire">Mail Proprietaire : </label>
-		<input type="text" name="email_proprietaire"><br/><br/>
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="nom">Nom :</label>  
+        <div class="col-md-4">
+        <input id="nom" name="nom" type="text" placeholder="Votre nom" class="form-control input-md">
+          
+        </div>
+      </div>
 
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="adresse">Adresse :</label>  
+        <div class="col-md-4">
+        <input id="adresse" name="adresse" type="text" placeholder="Votre adresse " class="form-control input-md">
+        <span class="help-block">N°rue Rue Département Ville</span>  
+        </div>
+      </div>
 
-		<h2>Creation de l'hebergement :</h2>
-		<label for="nom">Nom : </label>
-		<input type="text" name="nom"><br/>
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="prix">Prix/Nuit :</label>  
+        <div class="col-md-4">
+        <input id="prix" name="prix" type="text" placeholder="En euros " class="form-control input-md">
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="etoile">Nombre d'étoiles :</label>  
+        <div class="col-md-4">
+        <input id="etoile" name="etoile" type="text" placeholder="5 maximum" class="form-control input-md">
+          
+        </div>
+      </div>
+    </fieldset>
+    </form>
+  </div>
+
+  <div class=" col-sm-5">
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>Suite </legend>
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="resident">Destiné aux :</label>
+        <div class="col-md-4">
+          <select id="resident" name="resident" class="form-control">
+            <option value="arbitre">Arbitre</option>
+            <option value="equipe">Equipe Sportive</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="categorie">Catégorie :</label>
+        <div class="col-md-4">
+          <select id="categorie" name="categorie" class="form-control">
+            <option value="Hotel">Hôtel</option>
+            <option value="Auberge de jeunesse">Auberge de jeunesse</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="numero_telephone">Numéro de téléphone :</label>  
+        <div class="col-md-4">
+        <input id="numero_telephone" name="numero_telephone" type="text" placeholder="+33" class="form-control input-md">
+        <span class="help-block">ex : 0456789843</span>  
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Chambres a  lits :</label>  
+        <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="nombre de lits" class="form-control input-md">
+          
+        </div>
+      </div>	
+
 		
-		<label for="adresse">Adresse : </label>
-		<input type="text" name="adresse"><br/>
-
-		<label for="prix">Prix/nuit : </label>
-		<input type="text" name="prix"><br/>
-
-		<label for="etoiles">Nombre d'étoiles : </label>
-		<input type="text" name="etoiles"><br/>
-
-		<label for="resident">Destiné aux : </label>
-		<select name="resident" id="resident">
-		   <option value="arbitre">Arbitres</option>
-		   <option value="equipe">Equipe Sportive</option>
-		</select><br/>
-
-		<label for="categorie">Catégorie : </label>
-		<select name="categorie" id="categorie">
-		   <option value="Hotel">hotel</option>
-		   <option value="Auberge de jeunesse">Auberge de jeunesse</option>
-		</select><br/><br/>
-
-		<label for="numero_telephone">Numéro Telephone : </label>
-		<input type="text" name="numero_telephone"><br/>
 
 
-		Nombre de places : <br/>
+		<p> Nombre de places : </p>
+		
+		 <div class="form-group">
 		<?php 
 		for($i=1; $i<11;$i++){ ?>
 
-			<label for="lit_<?php echo ($i) ?>">Chambres à <?php echo ($i) ?> lit : </label>
-			<input type="text" value ="0" name="lit_<?php echo ($i) ?>"><br/>
-
+			<label class="col-md-4 control-label" for="lit_<?php echo ($i) ?>">Chambres à <?php echo ($i) ?> lit : </label>
+			<div class="col-md-4">
+			<input type="text" value ="0" name="lit_<?php echo ($i) ?>" placeholder="nombre de lits" class="form-control input-md">
+			</div>	
 		<?php } ?>
-		<br/>
+		 </div>	
+		
 
 		Services proposés : <br/>
 		<!-- affichage de tous les services disponibles grace a une requete sql -->
