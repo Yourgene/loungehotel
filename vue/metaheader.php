@@ -8,8 +8,8 @@
   		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   		<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
         <base href="http://localhost/loungehotel/">
-        <link href="../css/bootstrap/dist/css/csstest.css" rel="stylesheet">
-        <link href="../css/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="localhost/loungehotel/css/bootstrap/dist/css/csstest.css" rel="stylesheet">
+        <link href="localhost/loungehotel/css/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	</head>
 
 <!--Bandeau de navigation -->
