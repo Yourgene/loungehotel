@@ -40,12 +40,16 @@
 
 			E-mail : <?php echo $liste_loges[$i][2] ?></br>
 			<input type="hidden" name="mail_<?php echo $i ?>" value="<?php echo $liste_loges[$i][2] ?>">
+			<?php if($_SESSION['chambre_commune'] == NULL) { ?>
 			<label for="numero_chambre_<?php echo $i ?>">Numéro chambre attribué : </label>
 			<input type="text" name="numero_chambre_<?php echo $i ?>"><br/>
+			<?php } ?>
 		</p>
 
-		<?php } ?>
-
+		<?php } if($_SESSION['chambre_commune'] != NULL) { ?>
+			<label for="numero_chambre_<?php echo $i ?>">Numéro chambre attribué : </label>
+			<input type="text" name="numero_chambre_0"><br/>
+			<?php } ?>
 
 
 
