@@ -1,4 +1,4 @@
-<div>
+
 	Actions
 	<ul>
 		<li><a href= "hebergement">Ajouter un nouvel hebergement</a> </li>
