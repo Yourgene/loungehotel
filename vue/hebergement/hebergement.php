@@ -129,23 +129,28 @@
 
 		
 
+<div class="col-lg-offset-2 col-lg-8">
+	 <form class="form-horizontal">
+	 	 <fieldset>
+			<p> Nombre de places : </p>
 
-		<p> Nombre de places : </p>
-		
-		 <div class="form-group">
-		<?php 
-		for($i=1; $i<11;$i++){ ?>
+			 <div class="form-group">
+			<?php 
+			for($i=1; $i<11;$i++){ ?>
 
-			<label class="col-md-4 control-label" for="lit_<?php echo ($i) ?>">Chambres à <?php echo ($i) ?> lit : </label>
-			<div class="col-md-4">
-			<input type="text" value ="0" name="lit_<?php echo ($i) ?>" placeholder="nombre de lits" class="form-control input-md">
-			</div>	
-		<?php } ?>
-		 </div>	
-		
+				<label class="col-md-4 control-label" for="lit_<?php echo ($i) ?>">Chambres à <?php echo ($i) ?> lit : </label>
+				<div class="col-md-4">
+				<input type="text" value ="0" name="lit_<?php echo ($i) ?>" placeholder="nombre de lits" class="form-control input-md">
+				</div>	
+			<?php } ?>
+			 </div>	
+	 		</fieldset>
+	    </form>
+ </div>
+	
 
 		Services proposés : <br/>
-		<!-- affichage de tous les services disponibles grace a une requete sql -->
+		<!-- affichage de tous les services disponibles grace a une requete sql 
 		<?php 
 		foreach($liste_services as $service)
 		{
@@ -160,7 +165,7 @@
 	</form>
 
 
-		<!-- Formulaire ajout nouveau service -->
+		Formulaire ajout nouveau service 
 
 	<form method="post" action="hebergement">
 		<input type="HIDDEN" name="action" value="participer_evenement"><br/>
@@ -169,7 +174,19 @@
 
 		<label for="nom_service">Nom : </label>
 		<input type="text" name="nom_service"><br/>
+		<input type="submit" value="Creer ce service" />-->
 
-		
-		<input type="submit" value="Creer ce service" />
 	</form>
+	<div class="col-lg-offset-4 col-lg-3">
+	    <form class="form-horizontal">
+	      <fieldset>
+	        <div class="form-group">
+	            <label class="col-md-4 control-label" for="button ajout"></label>
+	            <div class="col-md-4">
+	              <button type="submit" value="Ajouter cet établissement" id="button ajout" name="button ajout" class="btn btn-primary">Ajouter cet établissement</button>
+	            </div>
+	          </div>
+	      </fieldset>
+	    </form>
+  	</div>
+</section>
