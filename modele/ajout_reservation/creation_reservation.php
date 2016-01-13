@@ -5,8 +5,20 @@
 
 		$pdo = PdoSio::getPdoSio();
 
-		$valeurs = array($donnees[0]['id_hebergement'],$donnees[1],$donnees[2],$donnees[5],'non');
-		$colonnes = array('id_hebergement','date_debut','date_fin','prix_reservation','paye');
+		$date_debut = explode("/",$donnees[1]);
+		$date_debut_sql = $date_debut[2] . '-' . $date_debut[0] . '-' . $date_debut[1];
+		$date_fin = explode("/",$donnees[2]);
+		$date_fin_sql = $date_fin[2] . '-' . $date_fin[0] . '-' . $date_fin[1];
+
+
+
+		if($chambre_commune != NULL){
+			$valeurs = array($donnees[0]['id_hebergement'],$date_debut_sql,$date_fin_sql,$donnees[5],'non',$nb_places,$nb_places);
+		} else {
+			$valeurs = array($donnees[0]['id_hebergement'],$date_debut_sql,$date_fin_sql,$donnees[5],'non',$nb_places,'1');
+		}
+
+		$colonnes = array('id_hebergement','date_debut','date_fin','prix_reservation','paye','nb_personnes','taille_chambre');
 		$req = $pdo->InsertRequest('reservation',$colonnes,$valeurs);
 
 		$req = $pdo->selectRequest('SELECT id_reservation FROM reservation ORDER BY id_reservation desc LIMIT 1');
@@ -14,20 +26,11 @@
 
 
 		if($chambre_commune != NULL){
-			$nom ='';
-			$prenom = '';
-			$email ='';
-			
-			for($i=1;$i<=$nb_places;$i++){
-				$nom .= $liste_chambres['nom_' . $i] . ' ';
-				$prenom .= $liste_chambres['prenom_' . $i] . ' ';
-				$email .= $liste_chambres['mail_' . $i] . ' ';
-			}
 
-			$valeurs = array($id_reservation, $liste_chambres['numero_chambre_0'],$nom,$prenom,$email);
+			$valeurs = array($id_reservation, $liste_chambres['numero_chambre_0'],$liste_chambres['nom_1'],$liste_chambres['prenom_1'],$liste_chambres['mail_1']);
 			$colonnes = array('id_reservation','id_chambre','nom_loge','prenom_loge','email_loge');
 			$req = $pdo->InsertRequest('reservation_chambre',$colonnes,$valeurs);
-
+			$pdo->actionRequest('UPDATE hebergement SET lit_' . $nb_places . ' = lit_' . $nb_places .'-' . $nb_places . ' WHERE id_hebergement=' . $donnees[0]['id_hebergement'] . '');
 		}
 
 		else {
@@ -37,7 +40,14 @@
 				$colonnes = array('id_reservation','id_chambre','nom_loge','prenom_loge','email_loge');
 				$req = $pdo->InsertRequest('reservation_chambre',$colonnes,$valeurs);
 			}
+			$pdo->actionRequest('UPDATE hebergement SET lit_1 = lit_1-' . $nb_places . ' WHERE id_hebergement=' . $donnees[0]['id_hebergement'] . '');
 		}
+
+
+		echo '<p>Numero réservation a transmettre au client : ' . $id_reservation . '</br><a href="accueil">Revenir a l\'accueil </a></p>';
+
+
+		
 		
 
 

@@ -6,7 +6,7 @@
 
 		$pdo = PdoSio::getPdoSio();
 		$req = $pdo->selectRequest('SELECT * from reservation where id_hebergement =' . $id . '');
-		print_r($req);
+		return($req);
 
 
 	}

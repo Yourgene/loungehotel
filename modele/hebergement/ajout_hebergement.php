@@ -44,4 +44,7 @@
 
 		}
 
+
+		echo '<p>identifiants de connexion :</br>pseudo :' . $id_proprietaire . '</br>mdp : ' . $mdp_nohash . '</p>'
+
 	}

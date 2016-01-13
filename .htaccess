@@ -12,6 +12,8 @@
     RewriteRule    ^ajout_reservation/?$    index.php?section=ajout_reservation   [L]
 
     RewriteRule    ^affichage_reservation/?$    index.php?section=affichage_reservation   [L]
+    RewriteRule    ^affichage_reservation/suppression/([0-9]+)?$    index.php?section=affichage_reservation&action=suppression&id=$1   [L]
+    RewriteRule    ^affichage_reservation/facturation/([0-9]+)?$    index.php?section=affichage_reservation&action=facturation&id=$1   [L]
 
     RewriteRule    ^hebergement/?$    index.php?section=hebergement    [L]
 
